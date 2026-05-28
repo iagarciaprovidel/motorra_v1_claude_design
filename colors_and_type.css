@@ -1,0 +1,415 @@
+/* ============================================================
+   MOTORRA — Colors & Type Tokens
+   ------------------------------------------------------------
+   Marketplace internacional para compra, venta y arriendo de
+   vehículos motorizados. Mercados primarios: LatAm + España + Brasil.
+
+   Import once at the root of any product surface.
+   ============================================================ */
+
+/* --- Fonts --------------------------------------------------- */
+/* Display: Bricolage Grotesque (variable) — confident, modern,
+   slightly editorial — used for headlines, prices, big numbers.
+   Body: Manrope — neutral geometric sans, very readable in ES/PT.
+   Mono: JetBrains Mono — used for VINs, plate numbers, codes.
+   All free on Google Fonts. Self-host TTFs in /fonts/ for prod. */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ============ COLORS ============ */
+
+  /* — Ink (neutrals, mostly text + UI chrome) — */
+  --ink-900: #0E1015;   /* primary text, near-black */
+  --ink-800: #1A1E26;   /* dark surfaces, dark mode bg */
+  --ink-700: #2A3040;   /* secondary dark surfaces */
+  --ink-600: #3F4658;   /* heavy borders on dark */
+  --ink-500: #5A6275;   /* muted body text */
+  --ink-400: #8B93A7;   /* tertiary text, captions */
+  --ink-300: #B8BFCE;   /* dividers on light */
+  --ink-200: #D9DEE7;   /* light borders */
+  --ink-100: #ECEFF4;   /* subtle bg, chip rest */
+  --ink-050: #F4F6FA;   /* page-tier background */
+
+  /* — Paper (warm neutrals, branded background) — */
+  --paper:    #FAF7F0;  /* signature warm canvas */
+  --paper-2:  #F1ECE0;  /* card alt / section divider */
+  --paper-3:  #E5DECC;  /* tinted block */
+  --white:    #FFFFFF;
+
+  /* — Coral (signature accent — buy/sell action, brand) — */
+  --coral-700: #B33310;
+  --coral-600: #E04113;
+  --coral-500: #FF5B2E;  /* DEFAULT — primary CTA */
+  --coral-400: #FF7E58;
+  --coral-200: #FFC4AC;
+  --coral-100: #FFE4D8;
+  --coral-050: #FFF1EA;
+
+  /* — Ocean (secondary action, links, trust signals) — */
+  --ocean-700: #0648A8;
+  --ocean-600: #0857D1;
+  --ocean-500: #0B6CF2;
+  --ocean-400: #3F8DF5;
+  --ocean-100: #D8E6FD;
+  --ocean-050: #ECF2FE;
+
+  /* — Forest (success, verified, certified inspection) — */
+  --forest-700: #0E6740;
+  --forest-600: #117850;
+  --forest-500: #14935B;
+  --forest-400: #4DB385;
+  --forest-100: #DCF1E5;
+  --forest-050: #EDF8F1;
+
+  /* — Amber (warnings, hot deals, urgency) — */
+  --amber-600: #C7820D;
+  --amber-500: #F5A524;
+  --amber-400: #FBC065;
+  --amber-100: #FCEBC4;
+  --amber-050: #FEF7E6;
+
+  /* — Crimson (errors, deletes, danger) — */
+  --crimson-600: #B0181D;
+  --crimson-500: #DC2A2F;
+  --crimson-400: #EE5F63;
+  --crimson-100: #FBD5D7;
+  --crimson-050: #FDEAEB;
+
+  /* ============ SEMANTIC ROLES ============ */
+
+  /* Surfaces */
+  --bg-page:        var(--paper);
+  --bg-canvas:      var(--white);          /* cards on page */
+  --bg-canvas-alt:  var(--paper-2);        /* striped/section alt */
+  --bg-sunken:      var(--ink-050);        /* input fields, code blocks */
+  --bg-overlay:     rgba(14,16,21,0.55);   /* modal scrim */
+  --bg-dark:        var(--ink-900);        /* dark hero, footer */
+  --bg-dark-alt:    var(--ink-800);
+  --header-bg:      rgba(250,247,240,0.85);
+
+  /* Text (light bg) */
+  --fg-strong:      var(--ink-900);
+  --fg:             var(--ink-800);
+  --fg-muted:       var(--ink-500);
+  --fg-subtle:      var(--ink-400);
+  --fg-on-dark:     var(--paper);
+  --fg-muted-on-dark: var(--ink-300);
+  --fg-link:        var(--ocean-600);
+
+  /* Borders */
+  --border:         var(--ink-200);
+  --border-strong:  var(--ink-300);
+  --border-on-dark: rgba(255,255,255,0.12);
+  --border-focus:   var(--ink-900);
+
+  /* Brand actions */
+  --brand:          var(--coral-500);
+  --brand-hover:    var(--coral-600);
+  --brand-press:    var(--coral-700);
+  --brand-tint:     var(--coral-100);
+  --brand-fg-on:    var(--white);
+
+  /* Inverse-contrast pill: when bg is fg-strong, text should be on-fg-strong */
+  --on-fg-strong:   var(--paper);
+
+  /* Status */
+  --success:        var(--forest-500);
+  --success-tint:   var(--forest-100);
+  --warning:        var(--amber-500);
+  --warning-tint:   var(--amber-100);
+  --danger:         var(--crimson-500);
+  --danger-tint:    var(--crimson-100);
+  --info:           var(--ocean-500);
+  --info-tint:      var(--ocean-100);
+
+  /* ============ TYPE — RAW SCALE ============ */
+  --font-display: 'Bricolage Grotesque', 'Manrope', system-ui, sans-serif;
+  --font-body:    'Manrope', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  /* Sizes — built for marketing + product surfaces */
+  --t-3xs: 11px;
+  --t-2xs: 12px;
+  --t-xs:  13px;
+  --t-sm:  14px;
+  --t-md:  15px;
+  --t-lg:  17px;
+  --t-xl:  20px;
+  --t-2xl: 24px;
+  --t-3xl: 30px;
+  --t-4xl: 38px;
+  --t-5xl: 48px;
+  --t-6xl: 64px;
+  --t-7xl: 84px;
+  --t-8xl: 112px;
+
+  --lh-tight:   1.05;
+  --lh-snug:    1.2;
+  --lh-normal:  1.45;
+  --lh-relaxed: 1.6;
+
+  --tr-tight:   -0.025em;
+  --tr-snug:    -0.015em;
+  --tr-normal:   0em;
+  --tr-wide:    0.04em;
+  --tr-wider:   0.08em;
+
+  /* ============ SPACING (4px base) ============ */
+  --sp-0:  0;
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* ============ RADII ============ */
+  --r-xs:   4px;   /* tags, micro */
+  --r-sm:   8px;   /* inputs */
+  --r-md:  12px;   /* default cards */
+  --r-lg:  16px;   /* feature cards */
+  --r-xl:  24px;   /* hero cards */
+  --r-2xl: 32px;
+  --r-pill: 9999px;
+
+  /* ============ SHADOWS / ELEVATION ============ */
+  /* Quiet, never blue-grey. Always neutral / warm ink shadow. */
+  --sh-0: none;
+  --sh-1: 0 1px 2px rgba(14,16,21,0.06), 0 0 0 1px rgba(14,16,21,0.04);
+  --sh-2: 0 2px 4px rgba(14,16,21,0.05), 0 4px 12px rgba(14,16,21,0.06);
+  --sh-3: 0 6px 16px rgba(14,16,21,0.08), 0 2px 4px rgba(14,16,21,0.04);
+  --sh-4: 0 16px 40px rgba(14,16,21,0.14), 0 4px 8px rgba(14,16,21,0.06);
+  --sh-pop: 0 24px 64px rgba(14,16,21,0.22), 0 8px 16px rgba(14,16,21,0.08);
+  --sh-focus: 0 0 0 3px rgba(255,91,46,0.25);     /* coral focus ring */
+  --sh-focus-ocean: 0 0 0 3px rgba(11,108,242,0.28);
+
+  /* ============ MOTION ============ */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0.05, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast:   140ms;
+  --dur-base:   220ms;
+  --dur-slow:   380ms;
+
+  /* ============ LAYOUT ============ */
+  --container:  1240px;
+  --container-narrow: 880px;
+  --nav-h: 72px;
+}
+
+/* ============================================================
+   SEMANTIC TYPE — apply via class OR use as recipe
+   ============================================================ */
+
+.t-display-1 {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 6.5vw, var(--t-7xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  font-weight: 700;
+  font-variation-settings: "opsz" 72;
+}
+.t-display-2 {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 4.8vw, var(--t-6xl));
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tight);
+  font-weight: 700;
+  font-variation-settings: "opsz" 56;
+}
+.t-h1 {
+  font-family: var(--font-display);
+  font-size: var(--t-5xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-snug);
+  font-weight: 700;
+  font-variation-settings: "opsz" 44;
+}
+.t-h2 {
+  font-family: var(--font-display);
+  font-size: var(--t-4xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-snug);
+  font-weight: 600;
+  font-variation-settings: "opsz" 36;
+}
+.t-h3 {
+  font-family: var(--font-display);
+  font-size: var(--t-3xl);
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-snug);
+  font-weight: 600;
+  font-variation-settings: "opsz" 28;
+}
+.t-h4 {
+  font-family: var(--font-display);
+  font-size: var(--t-2xl);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  font-variation-settings: "opsz" 22;
+}
+.t-h5 {
+  font-family: var(--font-body);
+  font-size: var(--t-xl);
+  line-height: 1.3;
+  font-weight: 700;
+}
+.t-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--t-xs);
+  line-height: 1;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: var(--tr-wider);
+}
+.t-lead {
+  font-family: var(--font-body);
+  font-size: var(--t-xl);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+.t-body {
+  font-family: var(--font-body);
+  font-size: var(--t-md);
+  line-height: var(--lh-relaxed);
+  font-weight: 400;
+}
+.t-body-sm {
+  font-family: var(--font-body);
+  font-size: var(--t-sm);
+  line-height: 1.55;
+  font-weight: 400;
+}
+.t-caption {
+  font-family: var(--font-body);
+  font-size: var(--t-xs);
+  line-height: 1.4;
+  font-weight: 500;
+  color: var(--fg-muted);
+}
+.t-price {
+  /* Big tabular price — used on listing cards and detail page */
+  font-family: var(--font-display);
+  font-feature-settings: "tnum" 1, "lnum" 1;
+  font-weight: 700;
+  letter-spacing: var(--tr-snug);
+}
+.t-meta {
+  /* For odometer, km, plates: monospaced numerals */
+  font-family: var(--font-mono);
+  font-size: var(--t-xs);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.t-mono { font-family: var(--font-mono); }
+
+/* ============================================================
+   BASELINE — opt in by adding `motorra` class to <body>
+   ============================================================ */
+.motorra {
+  font-family: var(--font-body);
+  font-size: var(--t-md);
+  line-height: var(--lh-relaxed);
+  color: var(--fg);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.motorra h1 { font: 700 var(--t-5xl)/var(--lh-snug) var(--font-display); letter-spacing: var(--tr-snug); margin: 0 0 var(--sp-4); color: inherit; }
+.motorra h2 { font: 600 var(--t-4xl)/var(--lh-snug) var(--font-display); letter-spacing: var(--tr-snug); margin: 0 0 var(--sp-4); color: inherit; }
+.motorra h3 { font: 600 var(--t-3xl)/1.25 var(--font-display); letter-spacing: var(--tr-snug); margin: 0 0 var(--sp-3); color: inherit; }
+.motorra h4 { font: 600 var(--t-2xl)/1.25 var(--font-display); margin: 0 0 var(--sp-2); color: inherit; }
+
+/* ============================================================
+   THEME: NIGHT  ·  premium monochrome noir
+   Activate by setting `data-theme="night"` on <html> or <body>.
+   Background goes deep black, surfaces near-black, all text shifts
+   to off-white. The brand "coral" is muted to a tiny logo notch
+   accent only — primary actions go monochrome (white on black).
+   ============================================================ */
+[data-theme="night"] {
+  --bg-page:        #0A0A0A;
+  --bg-canvas:      #161616;
+  --bg-canvas-alt:  #1F1F1F;
+  --bg-sunken:      #0E0E0E;
+  --bg-dark:        #050505;
+  --bg-dark-alt:    #0A0A0A;
+  --bg-overlay:     rgba(0,0,0,0.7);
+
+  --paper:          #F5F5F5;
+  --paper-2:        #1F1F1F;
+  --paper-3:        #2A2A2A;
+
+  --fg-strong:      #F5F5F5;
+  --fg:             #E5E5E5;
+  --fg-muted:       #A8A8A8;
+  --fg-subtle:      #7A7A7A;
+  --fg-on-dark:     #F5F5F5;
+  --fg-muted-on-dark: #A8A8A8;
+  --fg-link:        #F5F5F5;
+
+  --border:         rgba(255,255,255,0.10);
+  --border-strong:  rgba(255,255,255,0.16);
+  --border-on-dark: rgba(255,255,255,0.10);
+  --border-focus:   #F5F5F5;
+
+  /* Brand action goes monochrome — white pill on black */
+  --brand:          #F5F5F5;
+  --brand-hover:    #FFFFFF;
+  --brand-press:    #CCCCCC;
+  --brand-tint:     rgba(245,245,245,0.10);
+  --brand-fg-on:    #0A0A0A;
+  --coral-500:      #FF5B2E;   /* preserved — used only for logo notch */
+  --coral-600:      #FF6B40;
+  --coral-700:      #FF5B2E;
+  --coral-100:      rgba(255,91,46,0.16);
+  --coral-050:      rgba(255,91,46,0.08);
+
+  --ink-900:        #F5F5F5;   /* inverted for dark-section semantics */
+  --ink-800:        #E0E0E0;
+  --ink-700:        #C8C8C8;
+  --ink-500:        #A8A8A8;
+  --ink-400:        #7A7A7A;
+  --ink-300:        #5A5A5A;
+  --ink-200:        rgba(255,255,255,0.14);
+  --ink-100:        rgba(255,255,255,0.06);
+  --ink-050:        rgba(255,255,255,0.04);
+
+  --ocean-100:      rgba(63,141,245,0.16);
+  --ocean-050:      rgba(63,141,245,0.08);
+  --ocean-600:      #6FA9F7;
+  --ocean-700:      #8FBFFA;
+
+  --forest-100:     rgba(77,179,133,0.18);
+  --forest-050:     rgba(77,179,133,0.08);
+  --forest-500:     #4DB385;
+  --forest-600:     #6FC99F;
+  --forest-700:     #91DDB8;
+
+  --amber-100:      rgba(245,165,36,0.18);
+  --amber-500:      #F5A524;
+
+  --crimson-100:    rgba(238,95,99,0.18);
+  --crimson-500:    #EE5F63;
+  --crimson-600:    #F47A7E;
+
+  --sh-1: 0 1px 2px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.06);
+  --sh-2: 0 4px 12px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06);
+  --sh-3: 0 8px 24px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.06);
+  --sh-4: 0 20px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08);
+  --header-bg: rgba(10,10,10,0.78);
+  --on-fg-strong: #0A0A0A;
+}
+.motorra p  { margin: 0 0 var(--sp-4); }
+.motorra a  { color: var(--fg-link); text-decoration: none; border-bottom: 1px solid currentColor; }
+.motorra a:hover { color: var(--ocean-700); }
+.motorra code { font-family: var(--font-mono); font-size: 0.92em; background: var(--bg-sunken); padding: 2px 6px; border-radius: var(--r-xs); }

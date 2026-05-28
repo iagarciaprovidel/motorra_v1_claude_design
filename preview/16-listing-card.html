@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 24px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .listing { background: white; border-radius: 12px; box-shadow: 0 1px 2px rgba(14,16,21,0.06), 0 0 0 1px rgba(14,16,21,0.04); overflow: hidden; }
+  .photo { aspect-ratio: 16/10; background: linear-gradient(135deg, #2a3040, #5a6275); position: relative; display:flex; align-items:center; justify-content:center; color: rgba(255,255,255,0.4); font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;}
+  .photo.alt { background: linear-gradient(135deg, #8b6b3c, #c4a574); }
+  .photo .badges { position: absolute; top: 10px; left: 10px; display: flex; gap: 5px; }
+  .photo .heart { position: absolute; top: 10px; right: 10px; width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.92); display: flex; align-items: center; justify-content: center; color: var(--ink-700); font-size: 14px; }
+  .b { font-size: 10px; font-weight: 700; padding: 4px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.04em; line-height: 1; }
+  .b-cert { background: var(--forest-500); color: white; }
+  .b-hot { background: var(--amber-500); color: #3D2700; }
+  .info { padding: 14px 16px 16px; }
+  .title { font-family: var(--font-display); font-weight: 600; font-size: 17px; color: var(--ink-900); letter-spacing: -0.01em; line-height: 1.25; margin: 0; }
+  .sub { font-size: 12px; color: var(--ink-500); margin-top: 2px; }
+  .meta { display: flex; gap: 10px; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--ink-600); font-weight: 500; }
+  .meta span { display: inline-flex; align-items: center; gap: 4px; }
+  .footer { display: flex; align-items: baseline; justify-content: space-between; margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--ink-100); }
+  .price { font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--ink-900); letter-spacing: -0.02em; font-feature-settings: "tnum" 1; }
+  .price .ccy { font-size: 11px; color: var(--ink-500); font-weight: 600; }
+  .loc { font-size: 11px; color: var(--ink-500); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="row">
+      <div class="listing">
+        <div class="photo">
+          <div class="badges"><span class="b b-cert">Certificado</span></div>
+          <div class="heart">♡</div>
+          <span>FOTO · TOYOTA HILUX</span>
+        </div>
+        <div class="info">
+          <h3 class="title">2021 Toyota Hilux 2.4 4×4 SR</h3>
+          <div class="sub">Doble cabina · Diésel</div>
+          <div class="meta"><span>45,200 km</span><span>· Aut.</span><span>· Diésel</span></div>
+          <div class="footer">
+            <div class="price">CLP $19.990.000</div>
+            <div class="loc">Las Condes</div>
+          </div>
+        </div>
+      </div>
+      <div class="listing">
+        <div class="photo alt">
+          <div class="badges"><span class="b b-hot">Oferta</span></div>
+          <div class="heart">♡</div>
+          <span>FOTO · BMW SERIE 3</span>
+        </div>
+        <div class="info">
+          <h3 class="title">2019 BMW 320i M Sport</h3>
+          <div class="sub">Sedán · Bencina</div>
+          <div class="meta"><span>62,800 km</span><span>· Aut.</span><span>· 4 cil</span></div>
+          <div class="footer">
+            <div class="price">CLP $24.490.000</div>
+            <div class="loc">Vitacura</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

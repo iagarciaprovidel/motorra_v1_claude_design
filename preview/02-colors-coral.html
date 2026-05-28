@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .swatches { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+  .swatch { aspect-ratio: 1 / 1.2; border-radius: 8px; padding: 8px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 10px; font-weight: 600; box-sizing: border-box; border: 1px solid rgba(14,16,21,0.08); }
+  .swatch .name { opacity: 0.9; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 9px; opacity: 0.7; margin-top: 2px; }
+  .group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-500); margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="group-label">Coral · brand accent</div>
+    <div class="swatches">
+      <div class="swatch" style="background:#FFF1EA; color:#B33310;"><span class="name">050</span><span class="hex">FFF1EA</span></div>
+      <div class="swatch" style="background:#FFE4D8; color:#B33310;"><span class="name">100</span><span class="hex">FFE4D8</span></div>
+      <div class="swatch" style="background:#FFC4AC; color:#B33310;"><span class="name">200</span><span class="hex">FFC4AC</span></div>
+      <div class="swatch" style="background:#FF7E58; color:#FFF;"><span class="name">400</span><span class="hex">FF7E58</span></div>
+      <div class="swatch" style="background:#FF5B2E; color:#FFF; outline:2px solid #0E1015; outline-offset:-2px;"><span class="name">500★</span><span class="hex">FF5B2E</span></div>
+      <div class="swatch" style="background:#E04113; color:#FFF;"><span class="name">600</span><span class="hex">E04113</span></div>
+      <div class="swatch" style="background:#B33310; color:#FFF;"><span class="name">700</span><span class="hex">B33310</span></div>
+    </div>
+  </div>
+</body>
+</html>

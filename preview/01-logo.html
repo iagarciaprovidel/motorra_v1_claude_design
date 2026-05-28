@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 32px 36px; box-sizing: border-box; font-family: var(--font-body); }
+  .row { display: flex; gap: 32px; align-items: center; }
+  .block { display: flex; align-items: center; justify-content: center; min-height: 100px; padding: 22px 28px; border-radius: var(--r-md); border: 1px solid var(--border); }
+  .block.dark { background: var(--ink-900); border-color: transparent; }
+  .wm {
+    font-family: var(--font-display);
+    font-weight: 800; font-size: 42px;
+    font-variation-settings: "opsz" 72;
+    letter-spacing: -0.04em; line-height: 1;
+    color: var(--ink-900);
+    display: inline-flex; align-items: baseline;
+  }
+  .wm.light { color: var(--paper); }
+  .notch { width: 4px; height: 15px; background: var(--coral-500); border-radius: 2px; margin-left: 2px; align-self: flex-start; margin-top: 2px; }
+  .monogram {
+    width: 80px; height: 80px; border-radius: 18px;
+    background: var(--ink-900); display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  .monogram .m {
+    font-family: var(--font-display); font-weight: 800; font-size: 50px;
+    font-variation-settings: "opsz" 72;
+    color: var(--paper); letter-spacing: -0.04em; line-height: 1;
+  }
+  .monogram .notch-m { position: absolute; top: 14px; right: 17px; width: 5px; height: 14px; background: var(--coral-500); border-radius: 2px; }
+  .caption { font-size: 11px; color: var(--ink-400); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600; }
+  .stack { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="row">
+      <div class="stack">
+        <div class="block"><span class="wm">Motorra<span class="notch"></span></span></div>
+        <div class="caption">Wordmark · light</div>
+      </div>
+      <div class="stack">
+        <div class="block dark"><span class="wm light">Motorra<span class="notch"></span></span></div>
+        <div class="caption">Wordmark · dark</div>
+      </div>
+      <div class="stack">
+        <div class="monogram"><span class="m">M</span><span class="notch-m"></span></div>
+        <div class="caption">Monogram</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

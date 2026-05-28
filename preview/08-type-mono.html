@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 32px 36px; box-sizing: border-box; font-family: var(--font-body); }
+  .specimen { font-family: var(--font-mono); font-size: 28px; font-weight: 500; color: var(--ink-900); letter-spacing: 0.02em; line-height: 1.3; }
+  .row { display: flex; gap: 20px; margin-top: 18px; }
+  .chip { background: var(--ink-100); border-radius: 6px; padding: 10px 14px; font-family: var(--font-mono); font-size: 14px; color: var(--ink-900); }
+  .chip .lbl { display: block; font-family: var(--font-body); font-size: 10px; font-weight: 600; text-transform: uppercase; color: var(--ink-500); margin-bottom: 4px; letter-spacing: 0.06em; }
+  .meta { font-family: var(--font-body); font-size: 11px; color: var(--ink-500); margin-top: 18px; }
+  .meta b { color: var(--ink-900); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="specimen">JetBrains Mono</div>
+    <div class="row">
+      <div class="chip"><span class="lbl">VIN</span>1HGCM82633A123456</div>
+      <div class="chip"><span class="lbl">Patente</span>BBKR · 92</div>
+      <div class="chip"><span class="lbl">Km</span>45,200 km</div>
+      <div class="chip"><span class="lbl">ID</span>MOT-0048291</div>
+    </div>
+    <div class="meta"><b>Uso:</b> sólo numérico/técnico — VIN, patentes, kilometraje, IDs. Nunca prosa.</div>
+  </div>
+</body>
+</html>

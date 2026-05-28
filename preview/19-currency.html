@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .ccy { padding: 12px 10px; background: white; border: 1px solid var(--ink-100); border-radius: 10px; text-align: center; }
+  .ccy .flag { font-size: 18px; font-family: var(--font-mono); font-weight: 700; color: var(--ink-500); margin-bottom: 4px; }
+  .ccy .val { font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--ink-900); letter-spacing: -0.01em; font-feature-settings: "tnum" 1; }
+  .ccy .market { font-size: 9px; color: var(--ink-400); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.06em; font-weight: 600;}
+  .group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-500); margin-bottom: 14px; }
+  .note { font-size: 11px; color: var(--ink-500); margin-top: 12px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="group-label">Monedas &amp; formatos numéricos</div>
+    <div class="row">
+      <div class="ccy"><div class="flag">CL</div><div class="val">$19.990.000</div><div class="market">CLP</div></div>
+      <div class="ccy"><div class="flag">AR</div><div class="val">$18.500.000</div><div class="market">ARS</div></div>
+      <div class="ccy"><div class="flag">MX</div><div class="val">$385,000</div><div class="market">MXN</div></div>
+      <div class="ccy"><div class="flag">CO</div><div class="val">$92.000.000</div><div class="market">COP</div></div>
+      <div class="ccy"><div class="flag">PE</div><div class="val">S/ 78,500</div><div class="market">PEN</div></div>
+      <div class="ccy"><div class="flag">ES</div><div class="val">€22.500</div><div class="market">EUR</div></div>
+      <div class="ccy"><div class="flag">BR</div><div class="val">R$ 115.000</div><div class="market">BRL</div></div>
+      <div class="ccy"><div class="flag">US</div><div class="val">$18,500</div><div class="market">USD</div></div>
+    </div>
+    <div class="note">Separadores siguen la convención local. Tabular figures siempre (font-feature-settings: tnum).</div>
+  </div>
+</body>
+</html>

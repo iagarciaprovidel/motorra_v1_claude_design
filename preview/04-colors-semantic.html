@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .col { display: flex; flex-direction: column; }
+  .col-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-500); margin-bottom: 8px; }
+  .role { font-size: 10px; color: var(--ink-400); margin-top: 2px; }
+  .bar { height: 36px; border-radius: 6px; display: flex; align-items: center; padding: 0 10px; color: white; font-weight: 600; font-size: 11px; font-family: var(--font-mono); }
+  .bar.tint { color: inherit; }
+  .stack { display: flex; flex-direction: column; gap: 4px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid">
+      <div class="col">
+        <div class="col-label">Ocean · info</div>
+        <div class="stack">
+          <div class="bar" style="background:#0B6CF2">0B6CF2</div>
+          <div class="bar tint" style="background:#D8E6FD; color:#0648A8">D8E6FD</div>
+        </div>
+        <div class="role">links, badges info</div>
+      </div>
+      <div class="col">
+        <div class="col-label">Forest · success</div>
+        <div class="stack">
+          <div class="bar" style="background:#14935B">14935B</div>
+          <div class="bar tint" style="background:#DCF1E5; color:#0E6740">DCF1E5</div>
+        </div>
+        <div class="role">verificado, certificado</div>
+      </div>
+      <div class="col">
+        <div class="col-label">Amber · warn</div>
+        <div class="stack">
+          <div class="bar" style="background:#F5A524; color:#3D2700">F5A524</div>
+          <div class="bar tint" style="background:#FCEBC4; color:#7A5200">FCEBC4</div>
+        </div>
+        <div class="role">oferta caliente, alerta</div>
+      </div>
+      <div class="col">
+        <div class="col-label">Crimson · danger</div>
+        <div class="stack">
+          <div class="bar" style="background:#DC2A2F">DC2A2F</div>
+          <div class="bar tint" style="background:#FBD5D7; color:#B0181D">FBD5D7</div>
+        </div>
+        <div class="role">errores, eliminar</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

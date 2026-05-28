@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 16px; }
+  .icon-cell { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 12px 8px; border-radius: 10px; background: white; border: 1px solid var(--ink-100); }
+  .icon-cell svg { color: var(--ink-900); }
+  .lbl { font-family: var(--font-mono); font-size: 9px; color: var(--ink-500); }
+  .group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-500); margin-bottom: 14px; }
+  .source { font-size: 11px; color: var(--ink-500); margin-top: 12px; }
+  .source code { font-family: var(--font-mono); background: var(--ink-100); padding: 2px 6px; border-radius: 4px; font-size: 10px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="group-label">Iconography · Lucide · stroke 2px · 24px</div>
+    <div class="grid">
+      <div class="icon-cell"><i data-lucide="car"></i><span class="lbl">car</span></div>
+      <div class="icon-cell"><i data-lucide="truck"></i><span class="lbl">truck</span></div>
+      <div class="icon-cell"><i data-lucide="bike"></i><span class="lbl">bike</span></div>
+      <div class="icon-cell"><i data-lucide="bus"></i><span class="lbl">bus</span></div>
+      <div class="icon-cell"><i data-lucide="gauge"></i><span class="lbl">gauge</span></div>
+      <div class="icon-cell"><i data-lucide="fuel"></i><span class="lbl">fuel</span></div>
+      <div class="icon-cell"><i data-lucide="zap"></i><span class="lbl">zap</span></div>
+      <div class="icon-cell"><i data-lucide="cog"></i><span class="lbl">cog</span></div>
+      <div class="icon-cell"><i data-lucide="calendar"></i><span class="lbl">calendar</span></div>
+      <div class="icon-cell"><i data-lucide="map-pin"></i><span class="lbl">map-pin</span></div>
+      <div class="icon-cell"><i data-lucide="shield-check"></i><span class="lbl">shield</span></div>
+      <div class="icon-cell"><i data-lucide="badge-check"></i><span class="lbl">badge</span></div>
+      <div class="icon-cell"><i data-lucide="heart"></i><span class="lbl">heart</span></div>
+      <div class="icon-cell"><i data-lucide="key-round"></i><span class="lbl">key</span></div>
+      <div class="icon-cell"><i data-lucide="tag"></i><span class="lbl">tag</span></div>
+      <div class="icon-cell"><i data-lucide="camera"></i><span class="lbl">camera</span></div>
+    </div>
+    <div class="source">Loaded from <code>https://unpkg.com/lucide</code></div>
+  </div>
+  <script>lucide.createIcons();</script>
+</body>
+</html>
