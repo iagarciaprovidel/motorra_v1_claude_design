@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motorra — Publicar y vender vehículos motorizados en Chile. Sin comisión.</title>
+<link rel="stylesheet" href="../../colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; }
+  /* Range inputs match brand */
+  input[type="range"] { height: 4px; }
+  /* Selection */
+  ::selection { background: var(--coral-500); color: white; }
+  /* Launch-banner pulse */
+  @keyframes motorra-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.85); }
+  }
+</style>
+
+<!-- React + Babel (pinned per system requirements) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<!-- Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="motorra">
+  <div id="root"></div>
+
+  <!-- Data layer first -->
+  <script src="data.js"></script>
+
+  <!-- Components, then listing, then screens, then app -->
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel" src="welcome.jsx"></script>
+  <script type="text/babel" src="listing.jsx"></script>
+  <script type="text/babel" src="screens/Home.jsx"></script>
+  <script type="text/babel" src="screens/Categories.jsx"></script>
+  <script type="text/babel" src="screens/Search.jsx"></script>
+  <script type="text/babel" src="screens/Detail.jsx"></script>
+  <script type="text/babel" src="screens/Sell.jsx"></script>
+  <script type="text/babel" src="screens/Rent.jsx"></script>
+  <script type="text/babel" src="app.jsx"></script>
+</body>
+</html>

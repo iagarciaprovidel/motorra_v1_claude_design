@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motorra — Design System</title>
+<meta name="description" content="Sistema de diseño de Motorra: tokens, lineamientos de contenido, componentes y kits de UI para producir interfaces on-brand.">
+<link rel="stylesheet" href="colors_and_type.css">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    background: var(--paper);
+    color: var(--ink-900);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--coral-500); color: #fff; }
+  a { color: inherit; text-decoration: none; }
+
+  .wrap { max-width: var(--container); margin: 0 auto; padding: 0 var(--sp-6); }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--header-bg);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav {
+    height: var(--nav-h);
+    display: flex; align-items: center; justify-content: space-between; gap: var(--sp-4);
+  }
+  .brand { display: flex; align-items: center; gap: var(--sp-3); }
+  .brand .mark { width: 34px; height: 34px; display: block; }
+  .brand .name {
+    font-family: var(--font-display);
+    font-weight: 800; font-size: 22px; letter-spacing: var(--tr-tight);
+    font-variation-settings: "opsz" 24;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 7px;
+    font-size: var(--t-2xs); font-weight: 700; text-transform: uppercase;
+    letter-spacing: var(--tr-wider); color: var(--fg-muted);
+    border: 1px solid var(--border); border-radius: var(--r-pill);
+    padding: 5px 11px;
+  }
+  .badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--coral-500); }
+  .nav-links { display: flex; align-items: center; gap: var(--sp-6); }
+  .nav-links a { font-size: var(--t-sm); font-weight: 600; color: var(--fg-muted); }
+  .nav-links a:hover { color: var(--ink-900); }
+  @media (max-width: 720px) { .nav-links { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: clamp(56px, 9vw, 120px) 0 clamp(40px, 6vw, 72px); }
+  .eyebrow {
+    font-size: var(--t-xs); font-weight: 700; text-transform: uppercase;
+    letter-spacing: var(--tr-wider); color: var(--coral-600);
+    margin: 0 0 var(--sp-5);
+  }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(48px, 8.5vw, 112px);
+    line-height: 0.95;
+    letter-spacing: var(--tr-tight);
+    font-variation-settings: "opsz" 80;
+    margin: 0;
+    max-width: 14ch;
+  }
+  .hero h1 .coral { color: var(--coral-500); }
+  .hero .lead {
+    font-size: clamp(17px, 2vw, 22px);
+    line-height: 1.5; font-weight: 500;
+    color: var(--fg-muted);
+    max-width: 56ch;
+    margin: var(--sp-6) 0 0;
+    text-wrap: pretty;
+  }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: var(--sp-3); margin-top: var(--sp-8); }
+  .btn {
+    display: inline-flex; align-items: center; gap: var(--sp-2);
+    font-family: var(--font-body); font-weight: 600; font-size: var(--t-md);
+    padding: 14px 22px; border-radius: var(--r-md);
+    border: 1px solid transparent; cursor: pointer;
+    transition: transform var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn-primary { background: var(--coral-500); color: #fff; box-shadow: var(--sh-1); }
+  .btn-primary:hover { background: var(--coral-600); box-shadow: var(--sh-2); }
+  .btn-ghost { background: transparent; color: var(--ink-900); border-color: var(--border-strong); }
+  .btn-ghost:hover { border-color: var(--ink-900); }
+
+  /* ---------- Meta strip ---------- */
+  .meta-strip {
+    display: flex; flex-wrap: wrap; gap: var(--sp-8);
+    padding: var(--sp-8) 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .meta { }
+  .meta .k {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: var(--t-3xl); letter-spacing: var(--tr-snug); line-height: 1;
+  }
+  .meta .v {
+    font-size: var(--t-xs); font-weight: 600; text-transform: uppercase;
+    letter-spacing: var(--tr-wide); color: var(--fg-subtle); margin-top: var(--sp-2);
+  }
+
+  /* ---------- Sections ---------- */
+  section { padding: clamp(48px, 7vw, 88px) 0; }
+  .sec-head { margin-bottom: var(--sp-8); }
+  .sec-head .eyebrow { color: var(--fg-subtle); margin-bottom: var(--sp-3); }
+  .sec-head h2 {
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(28px, 4vw, 44px); letter-spacing: var(--tr-snug);
+    margin: 0; line-height: 1.1;
+  }
+  .sec-head p { color: var(--fg-muted); font-size: var(--t-lg); margin: var(--sp-3) 0 0; max-width: 60ch; }
+
+  /* Product cards */
+  .grid { display: grid; gap: var(--sp-5); }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+  @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+
+  .card {
+    display: flex; flex-direction: column;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: var(--r-xl); overflow: hidden;
+    box-shadow: var(--sh-1);
+    transition: transform var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: var(--sh-3); }
+  .card .thumb {
+    aspect-ratio: 16 / 10; position: relative; overflow: hidden;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card .thumb .tag {
+    position: absolute; top: var(--sp-4); left: var(--sp-4);
+    font-size: var(--t-2xs); font-weight: 700; text-transform: uppercase;
+    letter-spacing: var(--tr-wide); padding: 5px 10px; border-radius: var(--r-pill);
+    background: rgba(255,255,255,0.9); color: var(--ink-900); backdrop-filter: blur(4px);
+  }
+  .card .body { padding: var(--sp-6); display: flex; flex-direction: column; gap: var(--sp-2); flex: 1; }
+  .card .body h3 {
+    font-family: var(--font-display); font-weight: 700; font-size: var(--t-2xl);
+    letter-spacing: var(--tr-snug); margin: 0;
+  }
+  .card .body p { color: var(--fg-muted); font-size: var(--t-sm); line-height: 1.55; margin: 0; flex: 1; }
+  .card .go {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: 700; font-size: var(--t-sm); color: var(--coral-600);
+    margin-top: var(--sp-3);
+  }
+  .card:hover .go .arr { transform: translateX(4px); }
+  .go .arr { transition: transform var(--dur-fast) var(--ease-out); }
+
+  /* Thumb art */
+  .th-web { background: var(--ink-900); }
+  .th-club { background: #1E2030; }
+  .th-prop { background: var(--paper-2); }
+  .th-art { font-family: var(--font-display); font-weight: 800; color: rgba(255,255,255,0.08); font-size: 120px; line-height: 1; letter-spacing: -0.04em; }
+  .th-prop .th-art { color: rgba(14,16,21,0.07); }
+  .window-dots { position: absolute; top: 14px; left: 14px; display: flex; gap: 6px; }
+  .window-dots i { width: 9px; height: 9px; border-radius: 50%; background: rgba(255,255,255,0.22); }
+  .th-prop .window-dots i { background: rgba(14,16,21,0.15); }
+
+  /* Tokens row */
+  .token-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-4); }
+  @media (max-width: 900px) { .token-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 540px) { .token-grid { grid-template-columns: 1fr; } }
+  .token {
+    display: flex; align-items: center; gap: var(--sp-4);
+    padding: var(--sp-4) var(--sp-5);
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r-lg);
+    transition: border-color var(--dur-fast) var(--ease-out), box-shadow var(--dur-fast) var(--ease-out);
+  }
+  .token:hover { border-color: var(--border-strong); box-shadow: var(--sh-1); }
+  .token .swatch { width: 40px; height: 40px; border-radius: var(--r-sm); flex: none; box-shadow: inset 0 0 0 1px rgba(14,16,21,0.08); }
+  .token .label { font-weight: 700; font-size: var(--t-sm); }
+  .token .sub { font-size: var(--t-2xs); color: var(--fg-subtle); margin-top: 2px; font-family: var(--font-mono); }
+
+  /* Preview list */
+  .links { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--sp-2); }
+  .links a {
+    display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3);
+    padding: 13px var(--sp-4); border-radius: var(--r-md);
+    border: 1px solid var(--border); background: var(--white);
+    font-size: var(--t-sm); font-weight: 600;
+    transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+  }
+  .links a:hover { border-color: var(--coral-400); background: var(--coral-050); }
+  .links a .num { font-family: var(--font-mono); font-size: var(--t-2xs); color: var(--fg-subtle); }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--ink-900); color: var(--paper); padding: var(--sp-24) 0 var(--sp-12); }
+  footer .ft-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--sp-8); align-items: flex-start; }
+  footer .name { font-family: var(--font-display); font-weight: 800; font-size: var(--t-2xl); letter-spacing: var(--tr-tight); }
+  footer .tagline { color: var(--ink-300); font-size: var(--t-md); margin-top: var(--sp-2); max-width: 40ch; }
+  footer .ft-links { display: flex; flex-direction: column; gap: var(--sp-3); }
+  footer .ft-links a { color: var(--ink-300); font-size: var(--t-sm); font-weight: 600; }
+  footer .ft-links a:hover { color: var(--paper); }
+  footer .rule { height: 1px; background: var(--border-on-dark); margin: var(--sp-12) 0 var(--sp-6); }
+  footer .ft-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--sp-3); color: var(--ink-400); font-size: var(--t-xs); }
+  footer .ft-bottom .mono { font-family: var(--font-mono); }
+
+  /* reveal */
+  .reveal { opacity: 0; transform: translateY(12px); animation: rise var(--dur-slow) var(--ease-out) forwards; }
+  @keyframes rise { to { opacity: 1; transform: none; } }
+  .d1 { animation-delay: 60ms; } .d2 { animation-delay: 130ms; } .d3 { animation-delay: 200ms; } .d4 { animation-delay: 270ms; }
+  @media (prefers-reduced-motion: reduce) { .reveal { animation: none; opacity: 1; transform: none; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Motorra">
+      <svg class="mark" viewBox="0 0 64 64" role="img" aria-label="Motorra mark">
+        <rect width="64" height="64" rx="14" fill="#0E1015"></rect>
+        <path d="M14 48 V16 H22 L32 36 L42 16 H50 V48 H42 V28 L34 44 H30 L22 28 V48 Z" fill="#FAF7F0"></path>
+        <rect x="46" y="14" width="4" height="10" rx="2" fill="#FF5B2E"></rect>
+      </svg>
+      <span class="name">Motorra</span>
+      <span class="badge"><span class="dot"></span>Design System</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#kits">Kits</a>
+      <a href="#tokens">Tokens</a>
+      <a href="#design-system">Componentes</a>
+      <a href="README.md">Docs</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow reveal">Marketplace de vehículos · CL · ES-CL</p>
+      <h1 class="reveal d1">El sistema de diseño de <span class="coral">Motorra</span>.</h1>
+      <p class="lead reveal d2">Tokens visuales, lineamientos de contenido, componentes y kits de UI listos para producir interfaces y materiales on-brand. Sin vueltas. Sin sorpresas.</p>
+      <div class="actions reveal d3">
+        <a class="btn btn-primary" href="ui_kits/web/index.html">Ver el kit web<span aria-hidden="true">→</span></a>
+        <a class="btn btn-ghost" href="README.md">Leer la documentación</a>
+      </div>
+      <div class="meta-strip reveal d4">
+        <div class="meta"><div class="k">3</div><div class="v">Familias tipográficas</div></div>
+        <div class="meta"><div class="k">6</div><div class="v">Familias de color</div></div>
+        <div class="meta"><div class="k">20</div><div class="v">Tarjetas de tokens</div></div>
+        <div class="meta"><div class="k">3</div><div class="v">Kits / prototipos</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kits">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Productos & prototipos</p>
+        <h2>Kits y experiencias</h2>
+        <p>Superficies interactivas construidas con los tokens y componentes del sistema.</p>
+      </div>
+      <div class="grid grid-3">
+        <a class="card" href="ui_kits/web/index.html">
+          <div class="thumb th-web">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span class="th-art">M</span>
+            <span class="tag">Web marketplace</span>
+          </div>
+          <div class="body">
+            <h3>Kit web</h3>
+            <p>Marketing landing, búsqueda y listings, ficha de vehículo y el flujo “vende tu auto” con tasación instantánea.</p>
+            <span class="go">Abrir kit <span class="arr" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="card" href="motorra-club/index.html">
+          <div class="thumb th-club">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span class="th-art">C</span>
+            <span class="tag">Comunidad</span>
+          </div>
+          <div class="body">
+            <h3>Club Motorra</h3>
+            <p>Concepto social de comunidad: feed, categorías, perfiles y publicación, con paletas warm y dark.</p>
+            <span class="go">Abrir prototipo <span class="arr" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="card" href="propuestas/index.html">
+          <div class="thumb th-prop">
+            <div class="window-dots"><i></i><i></i><i></i></div>
+            <span class="th-art">P</span>
+            <span class="tag">Exploración</span>
+          </div>
+          <div class="body">
+            <h3>Propuestas</h3>
+            <p>Direcciones alternativas de landing y artboards comparados lado a lado sobre un canvas.</p>
+            <span class="go">Ver propuestas <span class="arr" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="tokens" style="background: var(--paper-2);">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Fundamentos</p>
+        <h2>Color de marca</h2>
+        <p>Negro tinta sobre crema cálido, con coral atardecer como acento único e inconfundible.</p>
+      </div>
+      <div class="token-grid">
+        <div class="token"><span class="swatch" style="background:#0E1015"></span><div><div class="label">Ink 900</div><div class="sub">#0E1015</div></div></div>
+        <div class="token"><span class="swatch" style="background:#FAF7F0"></span><div><div class="label">Paper</div><div class="sub">#FAF7F0</div></div></div>
+        <div class="token"><span class="swatch" style="background:#FF5B2E"></span><div><div class="label">Coral 500</div><div class="sub">#FF5B2E</div></div></div>
+        <div class="token"><span class="swatch" style="background:#0B6CF2"></span><div><div class="label">Ocean 500</div><div class="sub">#0B6CF2</div></div></div>
+        <div class="token"><span class="swatch" style="background:#14935B"></span><div><div class="label">Forest 500</div><div class="sub">#14935B</div></div></div>
+        <div class="token"><span class="swatch" style="background:#F5A524"></span><div><div class="label">Amber 500</div><div class="sub">#F5A524</div></div></div>
+        <div class="token"><span class="swatch" style="background:#DC2A2F"></span><div><div class="label">Crimson 500</div><div class="sub">#DC2A2F</div></div></div>
+        <div class="token"><span class="swatch" style="background:linear-gradient(135deg,#FAF7F0 50%,#0E1015 50%)"></span><div><div class="label">Bricolage · Manrope</div><div class="sub">Display · Body</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="design-system">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Tokens & componentes</p>
+        <h2>Tarjetas del sistema</h2>
+        <p>Cada tarjeta documenta una pieza del sistema — color, tipografía, espaciado o componente.</p>
+      </div>
+      <div class="links">
+        <a href="preview/01-logo.html"><span>Logo</span><span class="num">01</span></a>
+        <a href="preview/02-colors-coral.html"><span>Color · Coral</span><span class="num">02</span></a>
+        <a href="preview/03-colors-ink.html"><span>Color · Ink</span><span class="num">03</span></a>
+        <a href="preview/04-colors-semantic.html"><span>Color · Semántico</span><span class="num">04</span></a>
+        <a href="preview/05-type-display.html"><span>Tipo · Display</span><span class="num">05</span></a>
+        <a href="preview/06-type-body.html"><span>Tipo · Body</span><span class="num">06</span></a>
+        <a href="preview/07-type-scale.html"><span>Tipo · Escala</span><span class="num">07</span></a>
+        <a href="preview/08-type-mono.html"><span>Tipo · Mono</span><span class="num">08</span></a>
+        <a href="preview/09-spacing.html"><span>Espaciado</span><span class="num">09</span></a>
+        <a href="preview/10-radii.html"><span>Radios</span><span class="num">10</span></a>
+        <a href="preview/11-shadows.html"><span>Sombras</span><span class="num">11</span></a>
+        <a href="preview/12-buttons.html"><span>Botones</span><span class="num">12</span></a>
+        <a href="preview/13-inputs.html"><span>Inputs</span><span class="num">13</span></a>
+        <a href="preview/14-chips.html"><span>Chips</span><span class="num">14</span></a>
+        <a href="preview/15-badges.html"><span>Badges</span><span class="num">15</span></a>
+        <a href="preview/16-listing-card.html"><span>Listing card</span><span class="num">16</span></a>
+        <a href="preview/17-iconography.html"><span>Iconografía</span><span class="num">17</span></a>
+        <a href="preview/18-voice.html"><span>Voz & tono</span><span class="num">18</span></a>
+        <a href="preview/19-currency.html"><span>Monedas</span><span class="num">19</span></a>
+        <a href="preview/20-hero-dark.html"><span>Hero dark</span><span class="num">20</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="ft-top">
+      <div>
+        <div class="name">Motorra</div>
+        <p class="tagline">El marketplace transparente para vender tu vehículo en Chile — sin comisiones durante el lanzamiento.</p>
+      </div>
+      <div class="ft-links">
+        <a href="ui_kits/web/index.html">Kit web</a>
+        <a href="motorra-club/index.html">Club Motorra</a>
+        <a href="propuestas/index.html">Propuestas</a>
+        <a href="README.md">Documentación</a>
+        <a href="colors_and_type.css">Tokens (CSS)</a>
+      </div>
+    </div>
+    <div class="rule"></div>
+    <div class="ft-bottom">
+      <span>Sin vueltas. Sin sorpresas.</span>
+      <span class="mono">Design System · 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

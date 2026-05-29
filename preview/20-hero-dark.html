@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .preview { background: var(--ink-900); border-radius: 12px; padding: 32px 28px; position: relative; overflow: hidden; }
+  .eyebrow { color: var(--coral-500); font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; margin-bottom: 12px; }
+  .h { color: var(--paper); font-family: var(--font-display); font-weight: 700; font-size: 44px; letter-spacing: -0.025em; line-height: 0.98; font-variation-settings: "opsz" 56; }
+  .h .accent { color: var(--coral-500); }
+  .sub { color: rgba(250,247,240,0.7); font-size: 13px; line-height: 1.5; margin-top: 14px; max-width: 380px; }
+  .group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-500); margin-bottom: 14px; }
+  .mark { position: absolute; top: 16px; right: 20px; opacity: 0.6; }
+  .mark img { height: 16px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="group-label">Hero · dark variant</div>
+    <div class="preview">
+      <div class="mark"><span style="font-family: var(--font-display); font-weight: 800; font-size: 16px; font-variation-settings: 'opsz' 72; letter-spacing: -0.04em; color: var(--paper); display: inline-flex; align-items: baseline;">Motorra<span style="width: 2px; height: 5px; background: var(--coral-500); border-radius: 1px; margin-left: 1px; align-self: flex-start; margin-top: 1px;"></span></span></div>
+      <div class="eyebrow">Comprar · Vender · Arrendar</div>
+      <div class="h">Sin vueltas.<br><span class="accent">Sin sorpresas.</span></div>
+      <div class="sub">48.000 vehículos verificados en 7 países. Inspección, garantía y pago seguro en cada operación.</div>
+    </div>
+  </div>
+</body>
+</html>

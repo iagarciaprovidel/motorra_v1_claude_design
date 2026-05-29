@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
+  .row:last-child { margin-bottom: 0; }
+  .row-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-400); width: 80px; }
+  .btn { font-family: var(--font-body); font-weight: 600; font-size: 14px; padding: 12px 20px; border-radius: 10px; border: 1px solid transparent; cursor: pointer; transition: all 140ms cubic-bezier(0.22,1,0.36,1); display: inline-flex; align-items: center; gap: 8px; line-height: 1; }
+  .btn-primary { background: #FF5B2E; color: white; }
+  .btn-primary:hover { background: #E04113; }
+  .btn-secondary { background: #0E1015; color: #FAF7F0; }
+  .btn-ghost { background: transparent; color: #0E1015; border-color: #D9DEE7; }
+  .btn-ghost:hover { background: #ECEFF4; }
+  .btn-text { background: transparent; color: #0E1015; padding: 12px 8px; }
+  .btn-text:hover { color: #FF5B2E; }
+  .btn-sm { padding: 8px 14px; font-size: 13px; border-radius: 8px; }
+  .btn-lg { padding: 16px 28px; font-size: 16px; border-radius: 12px; }
+  .btn-disabled { opacity: 0.4; cursor: not-allowed; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="row">
+      <span class="row-label">primary</span>
+      <button class="btn btn-primary">Comprar ahora</button>
+      <button class="btn btn-primary btn-sm">Ver más</button>
+      <button class="btn btn-primary btn-lg">Vender mi auto</button>
+      <button class="btn btn-primary btn-disabled">Procesando</button>
+    </div>
+    <div class="row">
+      <span class="row-label">secondary</span>
+      <button class="btn btn-secondary">Cotizar</button>
+      <button class="btn btn-ghost">Cancelar</button>
+      <button class="btn btn-text">Saber más →</button>
+    </div>
+  </div>
+</body>
+</html>

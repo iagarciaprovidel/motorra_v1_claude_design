@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 32px 36px; box-sizing: border-box; }
+  .row { display: flex; align-items: baseline; gap: 24px; margin-bottom: 14px; }
+  .label { font-family: var(--font-body); font-size: 10px; color: var(--ink-400); text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; min-width: 80px; }
+  .ramp-1 { font: 700 38px/1 var(--font-display); letter-spacing:-0.025em; color: var(--ink-900); font-variation-settings: "opsz" 38;}
+  .ramp-2 { font: 600 30px/1 var(--font-display); letter-spacing:-0.015em; color: var(--ink-900); font-variation-settings: "opsz" 30;}
+  .ramp-3 { font: 600 24px/1 var(--font-display); letter-spacing:-0.01em; color: var(--ink-900); }
+  .ramp-4 { font: 700 17px/1 var(--font-body); color: var(--ink-900); }
+  .ramp-5 { font: 500 15px/1 var(--font-body); color: var(--ink-700); }
+  .ramp-6 { font: 700 11px/1 var(--font-body); text-transform:uppercase; letter-spacing:0.08em; color: var(--ink-500); }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="row"><span class="label">h2 / 38</span><span class="ramp-1">Vende tu auto en 48 hs</span></div>
+    <div class="row"><span class="label">h3 / 30</span><span class="ramp-2">2021 Toyota Hilux 2.4</span></div>
+    <div class="row"><span class="label">h4 / 24</span><span class="ramp-3">Inspección certificada</span></div>
+    <div class="row"><span class="label">h5 / 17</span><span class="ramp-4">Detalles del vehículo</span></div>
+    <div class="row"><span class="label">body / 15</span><span class="ramp-5">240 puntos revisados</span></div>
+    <div class="row"><span class="label">eyebrow / 11</span><span class="ramp-6">INVENTARIO CERTIFICADO</span></div>
+  </div>
+</body>
+</html>

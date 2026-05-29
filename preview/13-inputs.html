@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 20px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .label { font-size: 12px; font-weight: 600; color: var(--ink-700); }
+  .input { font-family: var(--font-body); font-size: 14px; padding: 11px 14px; background: white; border: 1px solid var(--border); border-radius: 8px; color: var(--ink-900); transition: all 140ms; }
+  .input::placeholder { color: var(--ink-400); }
+  .input.focus { border-color: var(--ink-900); box-shadow: 0 0 0 3px rgba(11,108,242,0.28); outline: none; }
+  .input.error { border-color: var(--crimson-500); }
+  .helper { font-size: 11px; color: var(--ink-500); }
+  .helper.err { color: var(--crimson-600); }
+  .select { background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235A6275' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 14px center; padding-right: 36px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid">
+      <div class="field"><div class="label">Marca</div><input class="input" placeholder="Toyota, Ford, BMW..."></div>
+      <div class="field"><div class="label">Modelo</div><select class="input select"><option>Hilux</option></select></div>
+      <div class="field"><div class="label">Patente o VIN</div><input class="input focus" value="BBKR92"><div class="helper">Te ayudamos a precargar los datos.</div></div>
+      <div class="field"><div class="label">Año</div><input class="input error" value="20221"><div class="helper err">Ingresa un año entre 1980 y 2026.</div></div>
+    </div>
+  </div>
+</body>
+</html>
