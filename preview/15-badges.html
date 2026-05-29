@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; align-items: center; }
+  .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-400); margin-bottom: 8px; }
+  .badge { font-size: 11px; font-weight: 700; padding: 5px 10px; border-radius: 6px; line-height: 1; display: inline-flex; align-items: center; gap: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .b-verified { background: var(--forest-100); color: var(--forest-700); }
+  .b-hot { background: var(--amber-500); color: #3D2700; }
+  .b-new { background: var(--ink-900); color: var(--paper); }
+  .b-financed { background: var(--ocean-100); color: var(--ocean-700); }
+  .b-soon { background: var(--paper-3); color: var(--ink-700); }
+  .b-rent { background: var(--coral-100); color: var(--coral-700); }
+  .b-discount { background: var(--crimson-500); color: white; }
+  .b-eco { background: var(--forest-500); color: white; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Status badges</div>
+    <div class="row">
+      <span class="badge b-verified">● Certificado</span>
+      <span class="badge b-financed">Financiable</span>
+      <span class="badge b-hot">Oferta caliente</span>
+      <span class="badge b-new">Nuevo en Motorra</span>
+      <span class="badge b-soon">Llega pronto</span>
+      <span class="badge b-rent">Arriendo</span>
+      <span class="badge b-discount">−12%</span>
+      <span class="badge b-eco">Eléctrico</span>
+    </div>
+  </div>
+</body>
+</html>

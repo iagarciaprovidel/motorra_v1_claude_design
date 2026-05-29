@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  .row:last-child { margin-bottom: 0; }
+  .chip { padding: 8px 14px; border-radius: 9999px; font-size: 13px; font-weight: 600; line-height: 1; display: inline-flex; align-items: center; gap: 6px; }
+  .chip.rest { background: white; color: var(--ink-700); border: 1px solid var(--border); }
+  .chip.active { background: var(--ink-900); color: var(--paper); border: 1px solid var(--ink-900); }
+  .chip.dismissable { background: var(--ink-100); color: var(--ink-900); border: 1px solid transparent; padding-right: 8px; }
+  .x { width: 14px; height: 14px; border-radius: 50%; background: var(--ink-300); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; }
+  .label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-400); margin-bottom: 10px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="label">Filter chips · rest / active</div>
+    <div class="row">
+      <span class="chip rest">Todos</span>
+      <span class="chip active">Autos</span>
+      <span class="chip rest">SUV</span>
+      <span class="chip rest">Camioneta</span>
+      <span class="chip rest">Moto</span>
+      <span class="chip rest">Eléctrico</span>
+      <span class="chip rest">Comercial</span>
+    </div>
+    <div class="label" style="margin-top:18px">Applied filters · dismissable</div>
+    <div class="row">
+      <span class="chip dismissable">Toyota <span class="x">×</span></span>
+      <span class="chip dismissable">Hilux <span class="x">×</span></span>
+      <span class="chip dismissable">2020–2024 <span class="x">×</span></span>
+      <span class="chip dismissable">CLP 10M–25M <span class="x">×</span></span>
+      <span class="chip dismissable">&lt; 60.000 km <span class="x">×</span></span>
+    </div>
+  </div>
+</body>
+</html>

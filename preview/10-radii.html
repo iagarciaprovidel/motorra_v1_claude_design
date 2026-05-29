@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .row { display: flex; gap: 16px; align-items: flex-end; }
+  .item { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .box { width: 70px; height: 70px; background: var(--ink-900); }
+  .name { font-size: 11px; font-weight: 700; color: var(--ink-700); font-family: var(--font-mono); }
+  .px { font-size: 10px; color: var(--ink-400); font-family: var(--font-mono); }
+  .group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-500); margin-bottom: 16px; }
+  .pill { background: var(--ink-900); color: var(--paper); padding: 6px 18px; border-radius: 9999px; font-size: 11px; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="group-label">Radii · border-radius scale</div>
+    <div class="row">
+      <div class="item"><div class="box" style="border-radius:4px"></div><div class="name">xs</div><div class="px">4px</div></div>
+      <div class="item"><div class="box" style="border-radius:8px"></div><div class="name">sm</div><div class="px">8px · inputs</div></div>
+      <div class="item"><div class="box" style="border-radius:12px"></div><div class="name">md ★</div><div class="px">12px · cards</div></div>
+      <div class="item"><div class="box" style="border-radius:16px"></div><div class="name">lg</div><div class="px">16px</div></div>
+      <div class="item"><div class="box" style="border-radius:24px"></div><div class="name">xl</div><div class="px">24px · hero</div></div>
+      <div class="item"><div class="box" style="border-radius:32px"></div><div class="name">2xl</div><div class="px">32px</div></div>
+      <div class="item"><div class="pill">pill</div><div class="name">pill</div><div class="px">9999 · chips</div></div>
+    </div>
+  </div>
+</body>
+</html>

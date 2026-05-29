@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  html, body { margin: 0; padding: 0; background: var(--paper); }
+  .card { width: 700px; padding: 28px 32px; box-sizing: border-box; font-family: var(--font-body); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .col { padding: 14px 16px; border-radius: 10px; }
+  .col.yes { background: var(--forest-050); border: 1px solid var(--forest-100); }
+  .col.no { background: var(--crimson-050); border: 1px solid var(--crimson-100); }
+  .hdr { font-size: 10px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+  .hdr.yes { color: var(--forest-700); }
+  .hdr.no { color: var(--crimson-600); }
+  .sample { font-size: 13px; line-height: 1.5; color: var(--ink-900); margin-bottom: 8px; }
+  .sample:last-child { margin-bottom: 0; }
+  .sample b { font-weight: 700; }
+  .group-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; color: var(--ink-500); margin-bottom: 14px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="group-label">Voz &amp; tono · sí vs no</div>
+    <div class="grid">
+      <div class="col yes">
+        <div class="hdr yes">✓ así sí</div>
+        <div class="sample">"Lanzamiento · publicar es 100% gratis"</div>
+        <div class="sample">"Vendé tu auto en 24 hs. Pago al instante."</div>
+        <div class="sample">"Inspección de 240 puntos."</div>
+        <div class="sample">"Sin comisiones hasta 2026."</div>
+      </div>
+      <div class="col no">
+        <div class="hdr no">✗ así no</div>
+        <div class="sample">"¡Aprovechá esta oferta única!"</div>
+        <div class="sample">"Maximiza el valor de tu activo."</div>
+        <div class="sample">"Garantizamos máxima calidad."</div>
+        <div class="sample">"Disfruta la experiencia 🚗💨"</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
